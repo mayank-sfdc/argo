@@ -1,18 +1,18 @@
-Argo
+#Argo
 curl -sLO https://github.com/argoproj/argo-workflows/releases/download/v3.1.5/argo-linux-amd64.gz
 gunzip argo-linux-amd64.gz
 chmod +x argo-linux-amd64
 sudo mv ./argo-linux-amd64 /usr/local/bin/argo
 
-Kubectl
+#Kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
-Eksctl
+#Eksctl
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 
-AWS CLI
+#AWS CLI
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
@@ -21,10 +21,16 @@ eksctl utils write-kubeconfig --cluster=argo-k8s --region=us-east-1
 
 rm -vf ${HOME}/.aws/credentials
 
-JQ
+#JQ
 sudo yum -y install jq gettext bash-completion moreutils
 
-Create Namespace and set SEC
-kubectl create rolebinding jkddwf --clusterrole=admin --serviceaccount=jkidd:default
+#kubectl get nodes 
+#kubectl create ns user17 
+#kubectl create rolebinding user17wf --clusterrole=admin --serviceaccount=user17:default
+#aws sts get-caller-identity 
+#kubectl config set-context --current --namespace=user17
+
+#Create Namespace and set SEC
+kubectl create rolebinding user17wf --clusterrole=admin --serviceaccount=user17:default
 
 aws sts get-caller-identity
